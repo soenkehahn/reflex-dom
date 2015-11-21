@@ -72,6 +72,22 @@ library
   other-extensions: TemplateHaskell
   ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2 -ferror-spans
 
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , ghcjs-dom
+    , gtk3
+    , hspec
+    , reflex
+    , reflex-dom
+    , transformers
+  other-modules:
+      HaltSpec
+
 source-repository head
   type: git
   location: https://github.com/ryantrinkle/reflex
