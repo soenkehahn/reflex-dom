@@ -23,7 +23,7 @@ spec = do
 type SpiderM =
   Widget Spider (Gui Spider (WithWebView SpiderHost) SpiderHostFrame)
 
-getFirstEventAndHalt :: (Event t () -> SpiderM (Event Spider ())) -> IO ()
+getFirstEventAndHalt :: (Event Spider () -> SpiderM (Event Spider ())) -> IO ()
 getFirstEventAndHalt action = do
   _ <- mainWidget $ do
     tick <- getPostBuild
